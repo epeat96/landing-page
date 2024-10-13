@@ -10,18 +10,67 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="flex font-sans bg-white place-content-center bg-[url('/uc.webp')] min-h-screen">
-		<section class="flex flex-col w-[60rem] max-h-min bg-white mt-32 rounded-lg opacity-90 p-4">
+	<body
+		class="flex font-sans bg-white place-content-center bg-[url('/uc.webp')] min-h-screen"
+	>
+		<section
+			data-aos="fade-up"
+			data-aos-duration="1000"
+			data-aos-id="landing"
+			class="flex flex-col w-[60rem] max-h-min bg-white mt-32 rounded-lg opacity-90 p-4"
+		>
 			<div class="divide-y-2">
-				<a class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer" href="/">landing-page</a>
-				<p class="text-3xl font-semibold pt-5 pb-2">Sitio en construcción</p>
-				<p class="text-base pt-5 pb-5">¡Hola! Gracias por visitar. Actualmente, esta página está en proceso de construcción.</p>
-				<p class="text-3xl font-semibold pt-5 pb-5">Site under development</p>
-				<p class="text-base pt-5 pb-5">This site is currently under development. Check back soon for updates!</p>
+				<a
+					class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
+					href="/">landing-page</a
+				>
+				<p class="text-3xl font-semibold pt-5 pb-2">
+					Sitio en construcción
+				</p>
+				<p class="text-base pt-5 pb-5">
+					¡Hola! Gracias por visitar. Actualmente, esta página está en
+					proceso de construcción.
+				</p>
+				<p class="text-3xl font-semibold pt-5 pb-5">
+					Site under development
+				</p>
+				<p class="text-base pt-5 pb-5">
+					This site is currently under development. Check back soon
+					for updates!
+				</p>
 			</div>
-			<div class="absolute bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"> 
-				<p class="text-right">2024 Cristobal (Epeat) Barreto ©. Todos los derechos reservados.</p>
+			<div
+				class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2 invisible"
+				id="footer"
+				data-aos="fade-down"
+				data-aos-duration="800"
+				data-aos-delay="1200"
+			>
+				<p class="text-right invisible" id="footerText">
+					2024 Cristobal (Epeat) Barreto ©. Todos los derechos
+					reservados.
+				</p>
 			</div>
+			<script>
+				import AOS from "aos";
+				import "aos/dist/aos.css";
+
+				document.addEventListener("aos:in:landing", () => {
+					setTimeout(() => {
+						const footer : HTMLElement = document.getElementById("footer") as HTMLElement;
+						const footerText : HTMLElement = document.getElementById("footerText") as HTMLElement;
+						footer.classList.remove("invisible");
+						footerText.classList.remove("invisible");
+					}, 1100);
+				});
+
+				AOS.init(
+					{
+						mirror: false,
+						once: true,
+						disableMutationObserver: true,
+					});
+			</script>
 		</section>
 	</body>
 </html>
