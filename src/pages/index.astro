@@ -1,66 +1,48 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body
+<BaseLayout title="Epeat\'s Site">
+	<section
 		data-sal="slide-up"
-		data-sal-duration="500"
-		class="flex font-sans bg-white place-content-center bg-[url('/uc.webp')] min-h-screen"
+		data-sal-duration="1500"
+		class="flex flex-col w-[60rem] max-h-min bg-white mt-32 rounded-lg opacity-90 p-4"
 	>
-		<section
-			class="flex flex-col w-[60rem] max-h-min bg-white mt-32 rounded-lg opacity-90 p-4"
-		>
-			<div class="divide-y-2">
-				<a
-					class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
-					href="/">landing-page</a
-				>
-				<p class="text-3xl font-semibold pt-5 pb-2">
-					Sitio en construcción
-				</p>
-				<p class="text-base pt-5 pb-5">
-					¡Hola! Gracias por visitar. Actualmente, esta página está en
-					proceso de construcción.
-				</p>
-				<p class="text-3xl font-semibold pt-5 pb-5">
-					Site under development
-				</p>
-				<p class="text-base pt-5 pb-5">
-					This site is currently under development. Check back soon
-					for updates!
-				</p>
-			</div>
-			<div
-				data-sal="slide-right"
-				data-sal-duration="600"
-				class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"
+		<div class="divide-y-2">
+			<a
+				class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
+				href="/">landing-page</a
 			>
-				<p class="text-right" id="footerText">
-					2024 Cristobal (Epeat) Barreto ©. Todos los derechos
-					reservados.
-				</p>
-			</div>
-			<script>
-			</script>
-		</section>
-		<script>
+			<p class="text-3xl font-semibold pt-5 pb-2">
+				Sitio en construcción
+			</p>
+			<p class="text-base pt-5 pb-5">
+				¡Hola! Gracias por visitar. Actualmente, esta página está en
+				proceso de construcción.
+			</p>
+			<p class="text-3xl font-semibold pt-5 pb-5">
+				Site under development
+			</p>
+			<p class="text-base pt-5 pb-5">
+				This site is currently under development. Check back soon
+				for updates!
+			</p>
+		</div>
+	</section>
+	<div
+		data-sal="slide-right"
+		data-sal-duration="1500"
+		class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"
+	>
+		<p class="text-right" id="footerText">
+			2024 Cristobal (Epeat) Barreto ©. Todos los derechos
+			reservados.
+		</p>
+	</div>
+	<script>
+		import 'sal.js/dist/sal.css';
+		import * as Sal from 'sal.js';
 
-			import * as Sal from 'sal.js';
-
-			const sal = (Sal as unknown as { default: () => void }).default;
-			sal();
-
-		</script>
-		<style>
-			@import './node_modules/sal.js/dist/sal.css';
-		</style>
-	</body>
-</html>
+		const sal = (Sal as unknown as { default: () => void }).default;
+		sal();
+	</script>
+</BaseLayout>
