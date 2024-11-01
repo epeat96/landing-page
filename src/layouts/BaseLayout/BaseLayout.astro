@@ -19,8 +19,10 @@ const { title = "My new page", description = "Page under construction" } = Astro
 		<title>{title}</title>
 	</head>
 	<body
-		class="flex font-sans bg-white place-content-center bg-[url('/uc.webp')] min-h-screen"
+		class="bg-[#004643]"
 	>
-        <slot />
+		<div class="flex font-sans place-content-center">
+			<slot />
+		</div>
     </body>
 </html>
