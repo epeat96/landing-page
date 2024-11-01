@@ -14,27 +14,28 @@ let getClass = (page: string) => {
 ---
 
 <nav
-    class="flex flex-row items-center justify-between bg-[#004643] p-1 sticky top-0"
+    class="flex md:flex-row flex-col items-center md:justify-between bg-[#004643] p-1 sticky top-0"
 >
-    <div
-        id="hamburger"
-        class="text-[#f9bc60] m-2 p-2 border-2 border-[#f9bc60] rounded md:hidden hover:accent-[#e8e4e6]"
-    >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
+    <div id="hamburger" class="md:hidden w-full">
+        <button
+            class="text-[#f9bc60] m-2 p-2 border-2 border-[#f9bc60] rounded hover:accent-[#e8e4e6]"
         >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+            </svg>
+        </button>
     </div>
-    <div id="menu" class="invisible md:visible">
+    <div id="menu" class="hidden md:block">
         <ul class="flex flex-col md:flex-row">
             <li class={getClass("index")}>
                 <a class="flex flex-row text-nowrap whitespace-nowrap" href="/">
@@ -63,6 +64,8 @@ let getClass = (page: string) => {
     let menu = document.getElementById("menu");
 
     hamburger!.addEventListener("click", () => {
-        menu!.classList.toggle("invisible");
+        menu!.classList.toggle("visible");
+        menu!.classList.toggle("hidden");
+        menu!.classList.toggle("block");
     });
 </script>
