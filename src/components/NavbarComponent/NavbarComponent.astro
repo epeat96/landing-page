@@ -6,14 +6,26 @@ interface Props{
 const { selected = "home" } = Astro.props as Props;
 
 let getClass = (page: string) => {
-    const base = 'p-2 hover:underline'
-    return selected == page ? `${base} bg-[#f9bc60] font-bold` : `${base} text-[#f9bc60] font-semibold bg-[#004643]`
+    const base = 'flex flex-row p-2 hover:underline rounded text-nowrap whitespace-nowrap'
+    return selected == page ? `${base} text-[#001e1d] bg-[#f9bc60] font-bold` : `${base} text-[#f9bc60] font-semibold bg-[#004643]`
 }
 ---
 
-<nav class="bg-[#004643]">
-    <ul class="flex flex-row">
-        <li class={getClass("index")}><a href="/">Home</a></li>
-        <li class={getClass("Lorem ipsum")}><a href="/Lorem ipsum">Lorem ipsum</a></li>
-    </ul>
+<nav class="flex flex-row items-center justify-between bg-[#004643] p-1">
+    <div class="text-[#f9bc60] p-2 outline-2 outline-[#f9bc60]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </div>
+    <div>
+        <ul class="flex flex-row">
+            <li class={getClass("index")}><a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" />
+                </svg>
+                Home
+            </a></li>
+            <li class={getClass("Lorem ipsum")}><a href="/Lorem ipsum">Lorem ipsum</a></li>
+        </ul>
+    </div>
 </nav>
