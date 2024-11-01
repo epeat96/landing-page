@@ -1,7 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
 ---
-<BaseLayout title="Lorem ipsum", selected={Astro.self.name}>
+
+<BaseLayout title="Lorem ipsum" , selected={Astro.self.name}>
 	<section
 		data-sal="slide-up"
 		data-sal-duration="1500"
@@ -10,14 +11,34 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 		<div class="divide-y-2">
 			<a
 				class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
-				href="/">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor veniam quas est asperiores iure qui! Aspernatur magnam veniam ipsa cumque maiores, molestiae ab laboriosam obcaecati repudiandae fugiat vero nulla doloribus?</a
+				href="/"
+				>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+				veniam quas est asperiores iure qui! Aspernatur magnam veniam
+				ipsa cumque maiores, molestiae ab laboriosam obcaecati
+				repudiandae fugiat vero nulla doloribus?</a
 			>
 			<p class="text-base font-semibold pt-5 pb-2">
-				Lorem ipsum odor amet, consectetuer adipiscing elit. Velit egestas accumsan ac; vulputate feugiat litora? Cursus suspendisse interdum pharetra suspendisse pulvinar fringilla ex aliquet imperdiet. Vulputate tempor viverra; nostra conubia nulla sagittis. Neque sem volutpat vulputate fringilla faucibus volutpat. Facilisis vitae egestas dictum lacinia nunc purus dapibus. Molestie nec aliquam praesent aenean efficitur. Ligula enim amet mauris ligula libero habitasse iaculis hendrerit dis. Lacinia suspendisse curae adipiscing amet, mauris dapibus elit etiam.
-
-Vitae netus ad lorem vivamus mollis sollicitudin rutrum. Semper finibus maecenas congue, felis id a ullamcorper. Tincidunt scelerisque duis diam finibus tempus sem at diam sit. Eleifend habitant diam felis et porttitor. Pellentesque vestibulum lobortis ridiculus ridiculus rhoncus nostra accumsan. Placerat ullamcorper mattis molestie fermentum netus. Leo ullamcorper tellus, amet condimentum efficitur amet mi.
-
-Mi facilisis feugiat euismod nibh nisi ultrices mattis. Erat augue inceptos laoreet consequat fames ornare. Lobortis semper auctor, donec ornare himenaeos auctor. Enim conubia facilisis; dignissim amet himenaeos primis. Pretium risus at lectus ac platea commodo habitasse. Scelerisque ligula erat iaculis blandit torquent sit.
+				Lorem ipsum odor amet, consectetuer adipiscing elit. Velit
+				egestas accumsan ac; vulputate feugiat litora? Cursus
+				suspendisse interdum pharetra suspendisse pulvinar fringilla ex
+				aliquet imperdiet. Vulputate tempor viverra; nostra conubia
+				nulla sagittis. Neque sem volutpat vulputate fringilla faucibus
+				volutpat. Facilisis vitae egestas dictum lacinia nunc purus
+				dapibus. Molestie nec aliquam praesent aenean efficitur. Ligula
+				enim amet mauris ligula libero habitasse iaculis hendrerit dis.
+				Lacinia suspendisse curae adipiscing amet, mauris dapibus elit
+				etiam. Vitae netus ad lorem vivamus mollis sollicitudin rutrum.
+				Semper finibus maecenas congue, felis id a ullamcorper.
+				Tincidunt scelerisque duis diam finibus tempus sem at diam sit.
+				Eleifend habitant diam felis et porttitor. Pellentesque
+				vestibulum lobortis ridiculus ridiculus rhoncus nostra accumsan.
+				Placerat ullamcorper mattis molestie fermentum netus. Leo
+				ullamcorper tellus, amet condimentum efficitur amet mi. Mi
+				facilisis feugiat euismod nibh nisi ultrices mattis. Erat augue
+				inceptos laoreet consequat fames ornare. Lobortis semper auctor,
+				donec ornare himenaeos auctor. Enim conubia facilisis; dignissim
+				amet himenaeos primis. Pretium risus at lectus ac platea commodo
+				habitasse. Scelerisque ligula erat iaculis blandit torquent sit.
 			</p>
 		</div>
 	</section>
@@ -27,15 +48,13 @@ Mi facilisis feugiat euismod nibh nisi ultrices mattis. Erat augue inceptos laor
 		class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"
 	>
 		<p class="text-right" id="footerText">
-			2024 Cristobal (Epeat) Barreto ©. Todos los derechos
-			reservados.
+			2024 Cristobal (Epeat) Barreto ©. Todos los derechos reservados.
 		</p>
 	</div>
 	<script>
-		import 'sal.js/dist/sal.css';
-		import * as sal from 'sal.js';
+		import "sal.js/dist/sal.css";
+		import * as sal from "sal.js";
 
 		sal.default();
-	
 	</script>
 </BaseLayout>

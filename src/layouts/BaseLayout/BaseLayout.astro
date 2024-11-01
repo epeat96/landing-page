@@ -1,17 +1,20 @@
 ---
-import NavbarComponent from '../../components/NavbarComponent/NavbarComponent.astro';
+import NavbarComponent from "../../components/NavbarComponent/NavbarComponent.astro";
 
-interface Props  {
-    title?: string,
-	description?: string,
-	selected?: string
-};
+interface Props {
+	title?: string;
+	description?: string;
+	selected?: string;
+}
 
-const { title = "My new page", description = "Page under construction", selected="home",} = Astro.props as Props; 
-
+const {
+	title = "My new page",
+	description = "Page under construction",
+	selected = "home",
+} = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -19,15 +22,13 @@ const { title = "My new page", description = "Page under construction", selected
 		<link rel="canonical" href={Astro.url} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description}>
+		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body
-		class="bg-[#abd1c6]"
-	>
-		<NavbarComponent selected={selected}/>
+	<body class="bg-[#abd1c6]">
+		<NavbarComponent selected={selected} />
 		<div class="flex font-sans place-content-center">
 			<slot />
 		</div>
-    </body>
+	</body>
 </html>

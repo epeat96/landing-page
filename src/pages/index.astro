@@ -1,7 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
 ---
-<BaseLayout title="Epeat\'s Site", selected={Astro.self.name},>
+
+<BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
 	<section
 		data-sal="slide-up"
 		data-sal-duration="1500"
@@ -23,8 +24,8 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 				Site under development
 			</p>
 			<p class="text-base pt-5 pb-5">
-				This site is currently under development. Check back soon
-				for updates!
+				This site is currently under development. Check back soon for
+				updates!
 			</p>
 		</div>
 	</section>
@@ -34,15 +35,13 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 		class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"
 	>
 		<p class="text-right" id="footerText">
-			2024 Cristobal (Epeat) Barreto ©. Todos los derechos
-			reservados.
+			2024 Cristobal (Epeat) Barreto ©. Todos los derechos reservados.
 		</p>
 	</div>
 	<script>
-		import 'sal.js/dist/sal.css';
-		import * as sal from 'sal.js';
+		import "sal.js/dist/sal.css";
+		import * as sal from "sal.js";
 
 		sal.default();
-	
 	</script>
 </BaseLayout>
