@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 ---
-<BaseLayout title="Epeat\'s Site">
+<BaseLayout title="Epeat\'s Site", selected={Astro.self.name},>
 	<section
 		data-sal="slide-up"
 		data-sal-duration="1500"
@@ -40,9 +40,9 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro"
 	</div>
 	<script>
 		import 'sal.js/dist/sal.css';
-		import * as Sal from 'sal.js';
+		import * as sal from 'sal.js';
 
-		const sal = (Sal as unknown as { default: () => void }).default;
-		sal();
+		sal.default();
+	
 	</script>
 </BaseLayout>

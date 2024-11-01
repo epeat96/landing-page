@@ -1,0 +1,19 @@
+---
+interface Props{
+    selected?: string
+}
+
+const { selected = "home" } = Astro.props as Props;
+
+let getClass = (page: string) => {
+    const base = 'p-2 hover:underline'
+    return selected == page ? `${base} bg-[#f9bc60] font-bold` : `${base} text-[#f9bc60] font-semibold bg-[#004643]`
+}
+---
+
+<nav class="bg-[#004643]">
+    <ul class="flex flex-row">
+        <li class={getClass("index")}><a href="/">Home</a></li>
+        <li class={getClass("Lorem ipsum")}><a href="/Lorem ipsum">Lorem ipsum</a></li>
+    </ul>
+</nav>

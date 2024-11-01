@@ -1,10 +1,14 @@
 ---
+import NavbarComponent from '../../components/NavbarComponent/NavbarComponent.astro';
+
 interface Props  {
     title?: string,
 	description?: string,
+	selected?: string
 };
 
-const { title = "My new page", description = "Page under construction" } = Astro.props as Props; 
+const { title = "My new page", description = "Page under construction", selected="home",} = Astro.props as Props; 
+
 ---
 
 <!DOCTYPE html>
@@ -19,8 +23,9 @@ const { title = "My new page", description = "Page under construction" } = Astro
 		<title>{title}</title>
 	</head>
 	<body
-		class="bg-[#004643]"
+		class="bg-[#abd1c6]"
 	>
+		<NavbarComponent selected={selected}/>
 		<div class="flex font-sans place-content-center">
 			<slot />
 		</div>
