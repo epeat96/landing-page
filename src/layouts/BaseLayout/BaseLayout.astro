@@ -30,8 +30,10 @@ const {
 		<div class="flex font-sans justify-around my-10 md:my-14">
 			<slot />
 		</div>
-		<div class="fixed bottom-10 right-5 md:right-10 
-		items-center text-center">
+		<div
+			class="fixed bottom-10 right-5 md:right-10
+		items-center text-center"
+		>
 			<button
 				id="scrollTop"
 				class="flex justify-around bg-gray-300 w-12 h-12
@@ -52,16 +54,37 @@ const {
 				</svg>
 			</button>
 		</div>
-		<footer class="flex justify-end bg-white w-full pb-2 pt-2 pr-2">
-			<p class="flex flex-row text-right text-xs" id="footerText">
-				© Copyright 2024 Cristobal (Epeat) Barreto. Powered by
-				<a
-					href="https://astro.build"
-					class="text-blue-500 ml-1 font-semibold hover:underline"
-				>
-					Astro</a
-				>.
-			</p>
+		<footer
+			class="flex flex-row justify-end bg-white items-center flex-wrap w-full pt-2 pr-2 text-xs"
+		>
+			<div>
+				<p class="flex flex-row text-right mr-1 text-nowrap">
+					© Copyright 2024 Cristobal (Epeat) Barreto.
+				</p>
+			</div>
+			<div>
+				<p class="flex flex-row text-right mr-1 text-nowrap">
+					Powered by
+					<a
+						href="https://astro.build"
+						class="text-blue-500 ml-1 font-semibold hover:underline"
+					>
+						Astro</a
+					>.
+				</p>
+			</div>
+			<div>
+                <p class="flex flex-row text-right mr-1 text-nowrap">
+					Hosted on
+					<a
+						href="https://pages.github.com/"
+						class="text-blue-500 ml-1 font-semibold hover:underline"
+					>
+						Github Pages
+					</a>
+					.
+				</p>
+			</div>
 		</footer>
 	</body>
 	<script>
