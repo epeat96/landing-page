@@ -4,8 +4,6 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
 
 <BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
 	<section
-		data-sal="slide-up"
-		data-sal-duration="1500"
 		class="flex flex-col w-[60rem] max-h-min bg-white mt-32 rounded-lg opacity-90 p-4"
 	>
 		<div class="divide-y-2">
@@ -30,18 +28,10 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
 		</div>
 	</section>
 	<div
-		data-sal="slide-right"
-		data-sal-duration="1500"
 		class="fixed bottom-0 right-0 bg-white opacity-90 w-full pb-2 pt-2 pr-2"
 	>
 		<p class="text-right" id="footerText">
 			2024 Cristobal (Epeat) Barreto ©. Todos los derechos reservados.
 		</p>
 	</div>
-	<script>
-		import "sal.js/dist/sal.css";
-		import * as sal from "sal.js";
-
-		sal.default();
-	</script>
 </BaseLayout>
