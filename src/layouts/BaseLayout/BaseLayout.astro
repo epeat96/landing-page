@@ -27,8 +27,29 @@ const {
 	</head>
 	<body class="bg-black">
 		<NavbarComponent selected={selected} />
-		<div class="flex font-sans place-content-center">
+		<div class="flex font-sans place-content-center my-10">
 			<slot />
 		</div>
+		<footer
+			class="flex justify-end fixed bottom-0 
+			right-0 bg-white w-full pb-2 pt-2 pr-2"
+		>
+			<p
+				class="flex flex-row text-right 
+				md:whitespace-nowrap md:text-nowrap 
+				sm:text-wrap sm:whitespace-normal text-xs"
+				id="footerText"
+			>
+				© Copyright 2024 Cristobal (Epeat) Barreto. 
+
+				Powered by
+				<a
+					href="https://astro.build"
+					class="text-blue-500 ml-1 font-semibold hover:underline"
+				>
+					Astro</a
+				>.
+			</p>
+		</footer>
 	</body>
 </html>
