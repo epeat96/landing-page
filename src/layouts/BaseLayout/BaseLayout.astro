@@ -25,24 +25,17 @@ const {
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-black">
+	<body class="bg-black flex flex-col justify-between min-h-screen">
 		<NavbarComponent selected={selected} />
-		<div class="flex font-sans place-content-center my-10">
+		<div
+			class="flex font-sans place-content-center py-10 md:py-14 lg:py-32"
+		>
 			<slot />
 		</div>
-		<footer
-			class="flex justify-end fixed bottom-0 
-			right-0 bg-white w-full pb-2 pt-2 pr-2"
-		>
-			<p
-				class="flex flex-row text-right 
-				md:whitespace-nowrap md:text-nowrap 
-				sm:text-wrap sm:whitespace-normal text-xs"
-				id="footerText"
-			>
-				© Copyright 2024 Cristobal (Epeat) Barreto. 
-
-				Powered by
+		<footer class="flex justify-end
+			right-0 bg-white w-full pb-2 pt-2 pr-2">
+			<p class="flex flex-row text-right text-xs" id="footerText">
+				© Copyright 2024 Cristobal (Epeat) Barreto. Powered by
 				<a
 					href="https://astro.build"
 					class="text-blue-500 ml-1 font-semibold hover:underline"
