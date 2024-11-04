@@ -14,16 +14,12 @@ let getClass = (page: string) => {
 ---
 
 <nav
-    class="
-    flex flex-col items-center bg-gray-950 
-    p-1 sticky top-0 border-b-2 opacity-90 
-    transition-all duration-500
-    md:flex-row md:justify-end" 
+    class="flex flex-col items-center bg-gray-950
+    p-1 sticky top-0 border-b opacity-90
+    md:flex-row md:justify-end"
 >
     <div id="hamburger" class="md:hidden w-full">
-        <button
-            class="text-yellow-50 m-2 p-2 hover:text-emerald-200"
-        >
+        <button class="text-yellow-50 m-2 p-2 hover:text-emerald-200">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -39,13 +35,14 @@ let getClass = (page: string) => {
             </svg>
         </button>
     </div>
-    <div id="menu" class="
-    overflow-hidden
+    <div
+        id="menu"
+        class="overflow-hidden
     max-h-0
     opacity-0
-    transition-all duration-500 ease-in-out 
-    md:transition-none md:max-h-full md:opacity-100
-    ">
+    transition-all duration-1000 ease-in-out
+    md:transition-none md:max-h-full md:opacity-100"
+    >
         <ul class="flex flex-col md:flex-row">
             <li class={getClass("index")}>
                 <a class="flex flex-row text-nowrap whitespace-nowrap" href="/">
@@ -76,7 +73,7 @@ let getClass = (page: string) => {
     hamburger!.addEventListener("click", () => {
         menu!.classList.toggle("max-h-0");
         menu!.classList.toggle("opacity-0");
-        menu!.classList.toggle("max-h-full");
+        menu!.classList.toggle("max-h-96");
         menu!.classList.toggle("opacity-100");
     });
 </script>
