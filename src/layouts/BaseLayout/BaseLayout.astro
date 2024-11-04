@@ -27,13 +27,32 @@ const {
 	</head>
 	<body class="bg-black flex flex-col justify-between min-h-screen">
 		<NavbarComponent selected={selected} />
-		<div
-			class="flex font-sans justify-around my-10 md:my-14" 
-		>
+		<div class="flex font-sans justify-around my-10 md:my-14">
 			<slot />
 		</div>
-		<footer class="flex justify-end
-			right-0 bg-white w-full pb-2 pt-2 pr-2">
+		<div class="fixed bottom-10 right-10
+		items-center text-center">
+			<button
+				id="scrollTop"
+				class="flex justify-around bg-gray-300 w-10 h-10
+			rounded-full items-center animate-bounce invisible"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="size-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+				</svg>
+			</button>
+		</div>
+		<footer class="flex justify-end bg-white w-full pb-2 pt-2 pr-2">
 			<p class="flex flex-row text-right text-xs" id="footerText">
 				© Copyright 2024 Cristobal (Epeat) Barreto. Powered by
 				<a
@@ -45,4 +64,19 @@ const {
 			</p>
 		</footer>
 	</body>
+	<script>
+		const scrollTop = document.getElementById("scrollTop");
+
+		document.onscroll = () => {
+			if (window.scrollY > 100) {
+				scrollTop!.classList.remove("invisible");
+			} else {
+				scrollTop!.classList.add("invisible");
+			}
+		};
+
+		scrollTop!.addEventListener("click", () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	</script>
 </html>
