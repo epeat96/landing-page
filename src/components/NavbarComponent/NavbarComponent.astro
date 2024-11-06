@@ -6,10 +6,10 @@ interface Props {
 const { selected = "home" } = Astro.props as Props;
 
 let getClass = (page: string) => {
-    const base = "p-4 rounded hover:text-emerald-200";
+    const base = "p-4 rounded";
     return selected == page
         ? `${base} text-emerald-500 font-bold`
-        : `${base} text-yellow-50 font-semibold`;
+        : `${base} text-yellow-50 font-semibold hover:text-emerald-200`;
 };
 ---
 
