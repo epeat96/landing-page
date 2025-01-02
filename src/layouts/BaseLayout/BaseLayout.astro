@@ -1,5 +1,6 @@
 ---
-import NavbarComponent from "../../components/NavbarComponent/NavbarComponent.astro";
+import NavbarComponent from "../../components/NavbarComponent.astro";
+import Card from "../../components/Card.astro";
 
 interface Props {
 	title?: string;
@@ -25,10 +26,14 @@ const {
 		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-black flex flex-col justify-between min-h-screen">
+	<body class="bg-nosferatu flex flex-col justify-between min-h-screen">
 		<NavbarComponent selected={selected} />
 		<div class="flex font-sans justify-around my-10 md:my-14">
-			<slot />
+			<div class="w-[20rem] sm:w-[40rem] lg:w-[60rem]">
+				<Card>
+					<slot />
+				</Card>
+			</div>
 		</div>
 		<div
 			class="fixed bottom-10 right-5 md:right-10
@@ -37,7 +42,7 @@ const {
 			<a
 				id="scrollTop"
 				href="#"
-				class="flex justify-around bg-gray-300 w-12 h-12
+				class="flex justify-around bg-aro-600 w-12 h-12
 			rounded-full items-center animate-bounce invisible opacity-85"
 			>
 				<svg
@@ -56,11 +61,11 @@ const {
 			</a>
 		</div>
 		<footer
-			class="flex flex-row justify-end bg-white flex-wrap w-full p-1 text-xs"
+			class="flex flex-row justify-end bg-aro-50 flex-wrap w-full p-1 text-xs"
 		>
 			<div>
 				<p class="flex flex-row text-right mr-1 text-nowrap">
-					© Copyright 2024 Cristobal (Epeat) Barreto.
+					© Copyright 2025 Cristobal (Epeat) Barreto.
 				</p>
 			</div>
 			<div>
