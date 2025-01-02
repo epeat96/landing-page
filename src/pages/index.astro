@@ -3,28 +3,20 @@ import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
 ---
 
 <BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
-	<section
-		class="flex flex-col w-[60rem] max-h-min bg-white rounded-lg p-4"
-	>
-		<div class="divide-y-2">
-			<a
-				class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
-				href="/">landing-page</a
-			>
-			<p class="text-3xl font-semibold pt-5 pb-2">
-				Sitio en construcción
-			</p>
-			<p class="text-base pt-5 pb-5">
-				¡Hola! Gracias por visitar. Actualmente, esta página está en
-				proceso de construcción.
-			</p>
-			<p class="text-3xl font-semibold pt-5 pb-5">
-				Site under development
-			</p>
-			<p class="text-base pt-5 pb-5">
-				This site is currently under development. Check back soon for
-				updates!
-			</p>
-		</div>
-	</section>
+	<div class="divide-y-2">
+		<a
+			class="text-green-700 font-semibold text-3xl hover:underline p-1 cursor-pointer"
+			href="/">landing-page</a
+		>
+		<p class="text-3xl font-semibold pt-5 pb-2">Sitio en construcción</p>
+		<p class="text-base pt-5 pb-5">
+			¡Hola! Gracias por visitar. Actualmente, esta página está en proceso
+			de construcción.
+		</p>
+		<p class="text-3xl font-semibold pt-5 pb-5">Site under development</p>
+		<p class="text-base pt-5 pb-5">
+			This site is currently under development. Check back soon for
+			updates!
+		</p>
+	</div>
 </BaseLayout>
