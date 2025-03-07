@@ -5,7 +5,7 @@ interface Props {
     class?: string; 
 }
 
-const baseClasses = "flex flex-col p-12 max-h-min bg-aro-900 rounded-3xl";
+const baseClasses = "flex flex-col p-6 lg:p-12 bg-aro-900 rounded-3xl";
 const { class: propClasses } = Astro.props as Props;
 const classes = twMerge(baseClasses, propClasses);
 
