@@ -1,0 +1,45 @@
+---
+import {twMerge} from 'tailwind-merge';
+interface Props {
+    class?: string; 
+    clickPrompt?: string;
+}
+const baseClasses = "lg:text-lg ml-2";
+const { class: propClasses, clickPrompt } = Astro.props as Props;
+const classes = twMerge(baseClasses, propClasses);
+const hasHidden = Boolean(Astro.slots.hidden);
+---
+<div class={classes}>
+    <div id="defaultContent">
+        <slot />
+    </div>
+    <div id="hiddenContent" class="hidden">
+        <slot name="hidden"/>
+    </div>
+    {hasHidden && (
+        <div>
+            {clickPrompt && (
+                <p id="readMore">
+                    {clickPrompt}
+                </p>
+            )}
+            <button id="readMoreButton" class="text-aro-300 hover:text-vanHelsing-500">Read more</button>
+        </div>
+    )}
+</div>
+{hasHidden &&
+(<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById("readMoreButton");
+    const readMore = document.getElementById("readMore");
+    const hiddenContent = document.getElementById("hiddenContent");
+    
+    if (button && hiddenContent) {
+        button.addEventListener("click", () => {
+            hiddenContent.classList.toggle("hidden");
+            readMore?.classList.toggle("hidden");
+            button.textContent = hiddenContent.classList.contains("hidden") ? "Read more" : "Read less";
+        });
+    }
+});
+</script>)}
