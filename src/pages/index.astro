@@ -1,22 +1,83 @@
 ---
 import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
+import UnorderedList from "../components/UnorderedList.astro";
+import ReadMore from "../components/ReadMore.astro";
 ---
 
 <BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
-	<div class="divide-y-2 text-cullen-50">
-		<a
-			class="text-blade-400 font-semibold text-3xl hover:underline p-1 cursor-pointer"
-			href="/">landing-page</a
-		>
-		<p class="text-3xl font-semibold pt-5 pb-2">Sitio en construcción</p>
-		<p class="text-base pt-5 pb-5">
-			¡Hola! Gracias por visitar. Actualmente, esta página está en proceso
-			de construcción.
-		</p>
-		<p class="text-3xl font-semibold pt-5 pb-5">Site under development</p>
-		<p class="text-base pt-5 pb-5">
-			This site is currently under development. Check back soon for
-			updates!
-		</p>
+	<div class="flex flex-col text-cullen-50 gap-2">
+		<section class="flex flex-col gap-1">
+			<h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
+				Hi, welcome to my site!
+			</h1>
+			<h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+				A little bit about me:
+			</h2>
+			 <ReadMore clickPrompt=`If you want to know more about me click "Read More", otherwise keep scrolling!`>
+				 <div slot="default">
+					<p>
+					My name is Cristobal Barreto and I am a Fullstack Software
+					Engineer. 
+					<br/>
+					I am passionate about technology and I love to learn new things.
+					<br/>
+					If you're interested in working with me consider downloading 
+					<a class=" text-vanHelsing-400 hover:underline whitespace-nowrap" href="https://example.com" >my resume</a>.
+					</p>
+				 </div>
+				<div slot="hidden">
+					<p>
+						My passion for learning has led me to try technologies that some people
+						might consider dead or not useful.
+						<br/>
+						I believe that every technology has something to teach us and that
+						we should always be open to learning new things.
+						<br/>
+						This mindset has led me to try technologies like Haskell for an University project
+						and right now I'm thinking about giving Elm a try.
+					</p>
+				</div>
+			 </ReadMore>
+		</section>
+		<section class="flex flex-col gap-1">
+			<h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
+				Techlogies I work with:
+			</h1>
+			<h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+				Frontend
+			</h2>
+			<UnorderedList elements={["Angular", "React","Tailwind"]} />
+			<h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+				Backend
+			</h2>
+			<UnorderedList elements={[".NET"]} />
+		</section>
+		<section class="flex flex-col gap-1">
+			<h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
+				Techlogies I've used:
+			</h1>
+
+			<h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+				Frontend
+			</h2>
+
+			<UnorderedList elements={["Astro (This site!)","Jekyll","Vanilla js"]} />
+
+			<h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+				Backend
+			</h2>
+
+			<UnorderedList
+				elements={[
+					"Django",
+					"Expressjs",
+					"Flask",
+					"FastAPI",
+					"Nodejs",
+					"Spring Boot",
+					"Haskell",
+				]}
+			/>
+		</section>
 	</div>
 </BaseLayout>
