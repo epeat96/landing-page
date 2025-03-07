@@ -28,8 +28,8 @@ const {
 	</head>
 	<body class="bg-nosferatu flex flex-col justify-between min-h-screen">
 		<NavbarComponent selected={selected} />
-		<div class="flex font-sans justify-around my-10 md:my-14">
-			<Card class="w-[20rem] sm:w-[40rem] lg:w-[60rem]">
+		<div class="flex font-sans justify-around my-12">
+			<Card class="flex max-w-xs md:max-w-2xl md:min-w-sm shadow-lg shadow-blade-400/20">
 				<slot />
 			</Card>
 		</div>
