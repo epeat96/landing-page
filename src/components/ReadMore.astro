@@ -13,13 +13,13 @@ const hasHidden = Boolean(Astro.slots.hidden);
     <div id="defaultContent">
         <slot />
     </div>
-    <div id="hiddenContent" class="hidden">
+    <div id="hiddenContent" class="transition-all duration-700 block ease-linear max-h-0 overflow-hidden">
         <slot name="hidden"/>
     </div>
     {hasHidden && (
         <div>
             {clickPrompt && (
-                <p id="readMore">
+                <p id="readMore" class="transition-all duration-100 ease-in max-h-full opacity-100 overflow-hidden">
                     {clickPrompt}
                 </p>
             )}
@@ -36,9 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (button && hiddenContent) {
         button.addEventListener("click", () => {
-            hiddenContent.classList.toggle("hidden");
-            readMore?.classList.toggle("hidden");
-            button.textContent = hiddenContent.classList.contains("hidden") ? "Read more" : "Read less";
+            hiddenContent.classList.toggle("max-h-0");
+            hiddenContent.classList.toggle("max-h-full");
+            readMore?.classList.toggle("max-h-0");
+            readMore?.classList.toggle("opacity-0");
+            readMore?.classList.toggle("opacity-100");
+            readMore?.classList.toggle("max-h-full");
+            button.textContent = hiddenContent.classList.contains("max-h-0") ? "Read more" : "Read less";
         });
     }
 });
