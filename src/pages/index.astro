@@ -5,14 +5,10 @@ import ReadMore from "../components/ReadMore.astro";
 ---
 
 <BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
-  <div class="flex flex-col text-cullen-50 gap-2">
+  <div class="flex flex-col gap-2">
     <section class="flex flex-col gap-1">
-      <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
-        Hi, welcome to my site!
-      </h1>
-      <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
-        A little bit about me:
-      </h2>
+      <h1>Hi, welcome to my site!</h1>
+      <h2>A little bit about me:</h2>
       <ReadMore
         clickPrompt=`If you want to know more about me click "Read More", otherwise keep scrolling!`
       >
