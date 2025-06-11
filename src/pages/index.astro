@@ -1,85 +1,89 @@
 ---
-import BaseLayout from "../layouts/BaseLayout/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import UnorderedList from "../components/UnorderedList.astro";
 import ReadMore from "../components/ReadMore.astro";
+import Card from "../components/Card.astro";
 ---
 
 <BaseLayout title="Epeat\'s Site" , selected={Astro.self.name} ,>
-  <div class="flex flex-col gap-2">
-    <section class="flex flex-col gap-1">
-      <h1>Hi, welcome to my site!</h1>
-      <h2>A little bit about me:</h2>
-      <ReadMore
-        clickPrompt=`If you want to know more about me click "Read More", otherwise keep scrolling!`
-      >
-        <div slot="default">
-          <p>
-            My name is Cristobal Barreto and I am a Fullstack Software Engineer.
-            <br />
-            I am passionate about technology and I love to learn new things.
-            <br />
-            If you're interested in working with me consider downloading
-            <a
-              class="text-vanHelsing-400 hover:underline whitespace-nowrap"
-              href="https://example.com">my resume</a
-            >.
-          </p>
-        </div>
-        <div slot="hidden">
-          <p>
-            My passion for learning has led me to try technologies that some
-            people might consider dead or not useful.
-            <br />
-            I believe that every technology has something to teach us and that we
-            should always be open to learning new things.
-            <br />
-            This mindset has led me to try technologies like Haskell for a University
-            project and right now I'm thinking about giving Elm a try.
-          </p>
-        </div>
-      </ReadMore>
-    </section>
-    <section class="flex flex-col gap-1">
-      <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
-        Techlogies I work with:
-      </h1>
-      <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
-        Frontend
-      </h2>
-      <UnorderedList elements={["Angular", "React", "Tailwind"]} />
-      <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
-        Backend
-      </h2>
-      <UnorderedList elements={[".NET", "Postgresql", "Docker"]} />
-    </section>
-    <section class="flex flex-col gap-1">
-      <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
-        Techlogies I've used:
-      </h1>
+  <Card class="flex max-w-xs md:max-w-2xl md:min-w-sm shadow-lg shadow-blade-400/20">
+    <div class="flex flex-col gap-2 text-cullen-50">
+      <section class="flex flex-col gap-1">
+        <h1>Hi, welcome to my site!</h1>
+        <h2>A little bit about me:</h2>
+        <ReadMore
+          clickPrompt=`If you want to know more about me click "Read More", otherwise keep scrolling!`
+        >
+          <div slot="default">
+            <p>
+              My name is Cristobal Barreto and I am a Fullstack Software
+              Engineer.
+              <br />
+              I am passionate about technology and I love to learn new things.
+              <br />
+              If you're interested in working with me consider downloading
+              <a
+                class="text-vanHelsing-400 hover:underline whitespace-nowrap"
+                href="https://example.com">my resume</a
+              >.
+            </p>
+          </div>
+          <div slot="hidden">
+            <p>
+              My passion for learning has led me to try technologies that some
+              people might consider dead or not useful.
+              <br />
+              I believe that every technology has something to teach us and that
+              we should always be open to learning new things.
+              <br />
+              This mindset has led me to try technologies like Haskell for a University
+              project and right now I'm thinking about giving Elm a try.
+            </p>
+          </div>
+        </ReadMore>
+      </section>
+      <section class="flex flex-col gap-1">
+        <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
+          Techlogies I work with:
+        </h1>
+        <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+          Frontend
+        </h2>
+        <UnorderedList elements={["Angular", "React", "Tailwind"]} />
+        <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+          Backend
+        </h2>
+        <UnorderedList elements={[".NET", "Postgresql", "Docker"]} />
+      </section>
+      <section class="flex flex-col gap-1">
+        <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
+          Techlogies I've used:
+        </h1>
 
-      <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
-        Frontend
-      </h2>
+        <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+          Frontend
+        </h2>
 
-      <UnorderedList
-        elements={["Astro (This site!)", "Jekyll", "Vanilla js"]}
-      />
+        <UnorderedList
+          elements={["Astro (This site!)", "Jekyll", "Vanilla js"]}
+        />
 
-      <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
-        Backend
-      </h2>
+        <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
+          Backend
+        </h2>
 
-      <UnorderedList
-        elements={[
-          "Django",
-          "Expressjs",
-          "Flask",
-          "FastAPI",
-          "Nodejs",
-          "Spring Boot",
-          "Haskell",
-        ]}
-      />
-    </section>
-  </div>
+        <UnorderedList
+          elements={[
+            "Django",
+            "Expressjs",
+            "Flask",
+            "FastAPI",
+            "Nodejs",
+            "Spring Boot",
+            "Haskell",
+          ]}
+        />
+      </section>
+    </div>
+  </Card>
 </BaseLayout>
