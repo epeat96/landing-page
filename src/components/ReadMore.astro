@@ -4,9 +4,11 @@ import { twMerge } from "tailwind-merge";
 interface Props {
   class?: string;
   clickPrompt?: string;
+  defaultText?: string;
+  clickedText?: string;
 }
 const baseClasses = "lg:text-lg ml-2";
-const { class: propClasses, clickPrompt } = Astro.props as Props;
+const { class: propClasses, clickPrompt, defaultText="Read More", clickedText="Read Less" } = Astro.props as Props;
 const classes = twMerge(baseClasses, propClasses);
 const hasHidden = Boolean(Astro.slots.hidden);
 
@@ -40,13 +42,13 @@ const hiddenContentId = uuidv4()+"-hiddenContent";
         class="text-aro-300 hover:text-vanHelsing-500"
         type="button"
       >
-        Read more
+        {defaultText}
       </button>
     </div>
   )}
 </div>
 
-<script is:inline define:vars={{buttonId, readMoreId, hiddenContentId}}>
+<script is:inline define:vars={{buttonId, readMoreId, hiddenContentId, defaultText, clickedText}}>
   document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById(buttonId);
     const readMore = document.getElementById(readMoreId);
@@ -61,8 +63,8 @@ const hiddenContentId = uuidv4()+"-hiddenContent";
         readMore?.classList.toggle("opacity-100");
         readMore?.classList.toggle("max-h-full");
         button.textContent = hiddenContent.classList.contains("max-h-0")
-          ? "Read more"
-          : "Read less";
+          ? defaultText
+          : clickedText;
       });
     }
   });
