@@ -1,76 +1,76 @@
 ---
 interface Props {
-    selected?: string;
+  selected?: string;
 }
 
 const { selected = "home" } = Astro.props as Props;
 
 let getClass = (page: string) => {
-    const base = "p-4 rounded";
-    return selected == page
-        ? `${base} text-blade-500 font-bold`
-        : `${base} font-semibold hover:text-blade-200`;
+  const base = "p-4 rounded";
+  return selected == page
+    ? `${base} text-blade-500 font-bold`
+    : `${base} font-semibold hover:text-blade-200`;
 };
 ---
 
 <nav
-    class="flex flex-col items-center bg-nosferatu text-cullen-50
+  class="flex flex-col items-center bg-nosferatu text-cullen-50
     p-1 sticky top-0 border-b opacity-90
     md:flex-row md:justify-end"
 >
-    <div id="hamburger" class="md:hidden w-full">
-        <button class="m-2 p-2 hover:text-blade-200">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-        </button>
-    </div>
-    <div
-        id="menu"
-        class="overflow-hidden
+  <div id="hamburger" class="md:hidden w-full">
+    <button class="m-2 p-2 hover:text-blade-200">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </div>
+  <div
+    id="menu"
+    class="overflow-hidden
     max-h-0
     opacity-0
     transition-all duration-1000 ease-in-out
     md:transition-none md:max-h-full md:opacity-100"
-    >
-        <ul class="flex flex-col md:flex-row">
-            <li class={getClass("index")}>
-                <a class="flex flex-row text-nowrap whitespace-nowrap" href="/">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="size-5 mr-1"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    About
-                </a>
-            </li>
-        </ul>
-    </div>
+  >
+    <ul class="flex flex-col md:flex-row">
+      <li class={getClass("index")}>
+        <a class="flex flex-row text-nowrap whitespace-nowrap" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="size-5 mr-1"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+              clip-rule="evenodd"></path>
+          </svg>
+          About
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <script>
-    let hamburger = document.getElementById("hamburger");
-    let menu = document.getElementById("menu");
+  let hamburger = document.getElementById("hamburger");
+  let menu = document.getElementById("menu");
 
-    hamburger!.addEventListener("click", () => {
-        menu!.classList.toggle("max-h-0");
-        menu!.classList.toggle("opacity-0");
-        menu!.classList.toggle("max-h-96");
-        menu!.classList.toggle("opacity-100");
-    });
+  hamburger!.addEventListener("click", () => {
+    menu!.classList.toggle("max-h-0");
+    menu!.classList.toggle("opacity-0");
+    menu!.classList.toggle("max-h-96");
+    menu!.classList.toggle("opacity-100");
+  });
 </script>

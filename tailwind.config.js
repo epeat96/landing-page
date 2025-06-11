@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}"],
   theme: {
     extend: {},
   },
-  plugins: [
-    require('tailwind-dracula')(),
-  ],
+  plugins: [require("tailwind-dracula")()],
 };

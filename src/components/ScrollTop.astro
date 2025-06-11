@@ -2,46 +2,46 @@
 import { twMerge } from "tailwind-merge";
 
 interface Props {
-    class?: string;
+  class?: string;
 }
 
 const baseClasses =
-    "fixed bottom-20 right-1 md:right-16 items-center text-center";
+  "fixed bottom-20 right-1 md:right-16 items-center text-center";
 const { class: propClasses } = Astro.props as Props;
 const classes = twMerge(baseClasses, propClasses);
 ---
 
 <div class={classes}>
-    <button
-        id="scrollTop"
-        class="flex justify-around bg-aro-600 w-10 h-10 lg:w-12 lg:h-12
+  <button
+    id="scrollTop"
+    class="flex justify-around bg-aro-600 w-10 h-10 lg:w-12 lg:h-12
 			rounded-full items-center animate-bounce invisible opacity-85"
-        onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
     >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
-        </svg>
-    </button>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
+    </svg>
+  </button>
 </div>
 
 <script>
-    const scrollTop = document.getElementById("scrollTop");
+  const scrollTop = document.getElementById("scrollTop");
 
-    document.onscroll = () => {
-        if (window.scrollY > 100) {
-            scrollTop!.classList.remove("invisible");
-        } else {
-            scrollTop!.classList.add("invisible");
-        }
-    };
+  document.onscroll = () => {
+    if (window.scrollY > 100) {
+      scrollTop!.classList.remove("invisible");
+    } else {
+      scrollTop!.classList.add("invisible");
+    }
+  };
 </script>

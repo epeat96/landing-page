@@ -1,49 +1,69 @@
 ---
-import {twMerge} from 'tailwind-merge';
+import { v4 as uuidv4 } from 'uuid';
+import { twMerge } from "tailwind-merge";
 interface Props {
-    class?: string; 
-    clickPrompt?: string;
+  class?: string;
+  clickPrompt?: string;
 }
 const baseClasses = "lg:text-lg ml-2";
 const { class: propClasses, clickPrompt } = Astro.props as Props;
 const classes = twMerge(baseClasses, propClasses);
 const hasHidden = Boolean(Astro.slots.hidden);
+
+const readMoreId = uuidv4()+"-readMore";
+const buttonId = uuidv4()+"-readMoreButton";
+const hiddenContentId = uuidv4()+"-hiddenContent";
 ---
+
 <div class={classes}>
-    <div id="defaultContent">
-        <slot />
+  <div id="defaultContent">
+    <slot />
+  </div>
+  <div
+    id={hiddenContentId}
+    class="transition-all duration-700 block ease-linear max-h-0 overflow-hidden"
+  >
+    <slot name="hidden" />
+  </div>
+  {hasHidden && (
+    <div>
+      {clickPrompt && (
+        <p
+          id={readMoreId}
+          class="transition-all duration-100 ease-in max-h-full opacity-100 overflow-hidden"
+        >
+          {clickPrompt}
+        </p>
+      )}
+      <button
+        id={buttonId}
+        class="text-aro-300 hover:text-vanHelsing-500"
+        type="button"
+      >
+        Read more
+      </button>
     </div>
-    <div id="hiddenContent" class="transition-all duration-700 block ease-linear max-h-0 overflow-hidden">
-        <slot name="hidden"/>
-    </div>
-    {hasHidden && (
-        <div>
-            {clickPrompt && (
-                <p id="readMore" class="transition-all duration-100 ease-in max-h-full opacity-100 overflow-hidden">
-                    {clickPrompt}
-                </p>
-            )}
-            <button id="readMoreButton" class="text-aro-300 hover:text-vanHelsing-500">Read more</button>
-        </div>
-    )}
+  )}
 </div>
-{hasHidden &&
-(<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById("readMoreButton");
-    const readMore = document.getElementById("readMore");
-    const hiddenContent = document.getElementById("hiddenContent");
-    
+
+<script is:inline define:vars={{buttonId, readMoreId, hiddenContentId}}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById(buttonId);
+    const readMore = document.getElementById(readMoreId);
+    const hiddenContent = document.getElementById(hiddenContentId);
+
     if (button && hiddenContent) {
-        button.addEventListener("click", () => {
-            hiddenContent.classList.toggle("max-h-0");
-            hiddenContent.classList.toggle("max-h-full");
-            readMore?.classList.toggle("max-h-0");
-            readMore?.classList.toggle("opacity-0");
-            readMore?.classList.toggle("opacity-100");
-            readMore?.classList.toggle("max-h-full");
-            button.textContent = hiddenContent.classList.contains("max-h-0") ? "Read more" : "Read less";
-        });
+      button.addEventListener("click", () => {
+        hiddenContent.classList.toggle("max-h-0");
+        hiddenContent.classList.toggle("max-h-full");
+        readMore?.classList.toggle("max-h-0");
+        readMore?.classList.toggle("opacity-0");
+        readMore?.classList.toggle("opacity-100");
+        readMore?.classList.toggle("max-h-full");
+        button.textContent = hiddenContent.classList.contains("max-h-0")
+          ? "Read more"
+          : "Read less";
+      });
     }
-});
-</script>)}
+  });
+</script>
