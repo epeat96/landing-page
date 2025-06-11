@@ -1,0 +1,40 @@
+---
+import NavbarComponent from "../components/NavbarComponent.astro";
+import Card from "../components/Card.astro";
+import ScrollTop from "../components/ScrollTop.astro";
+import Footer from "../components/Footer.astro";
+import "../components/GlobalStyles.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  selected?: string;
+}
+
+const {
+  title = "My new page",
+  description = "Page under construction",
+  selected = "home",
+} = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-nosferatu flex flex-col justify-between min-h-screen">
+    <NavbarComponent selected={selected} />
+    <div class="flex font-sans justify-around my-12">
+      <slot />
+    </div>
+    <ScrollTop />
+    <Footer />
+  </body>
+</html>
