@@ -7,13 +7,34 @@
   @tailwind components;
   @tailwind utilities;
 
+  @font-face {
+    font-family: "Baskervville";
+    src: url("Baskervville.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SourceSerif4";
+    src: url("SourceSerif4.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   @layer base {
+    body {
+      @apply text-cullen-50;
+      font-family: "SourceSerif4", serif;
+    }
+
     h1 {
       @apply text-blade-400 font-semibold text-2xl lg:text-3xl;
+      font-family: 'Baskervville', serif;
     }
 
     h2 {
       @apply text-lincoln-300 font-semibold text-xl lg:text-2xl;
+      font-family: 'Baskervville', serif;
     }
   }
 </style>
