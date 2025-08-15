@@ -1,6 +1,6 @@
-# Landing Page & Personal Blog Template
+# Personal Landing Page & Blog
 
-A simple landing page and personal blog starter built with [Astro](https://astro.build) and Tailwind CSS. Fork it, customize the content, and deploy it as your own corner of the internet.
+This repository contains the source for my personal website and blog, deployed via GitHub Pages. It's built with [Astro](https://astro.build) and Tailwind CSS. The site began as a simple starter, so if you're looking for a starting point feel free to fork the repo and make it your own.
 
 ## Features
 
@@ -11,7 +11,7 @@ A simple landing page and personal blog starter built with [Astro](https://astro
 
 ## Getting Started
 
-1. **Fork** this repository.
+1. **Fork** this repository if you'd like to use it as a starting point.
 2. **Install dependencies**:
 
    ```bash
