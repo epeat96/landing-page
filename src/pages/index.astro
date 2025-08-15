@@ -6,7 +6,9 @@ import Card from "../components/Card.astro";
 ---
 
 <BaseLayout title="Epeat's Site" selected={Astro.self.name}>
-  <Card class="flex max-w-xs md:max-w-2xl md:min-w-sm shadow-lg shadow-blade-400/20">
+  <Card
+    class="flex max-w-xs md:max-w-2xl md:min-w-sm shadow-lg shadow-blade-400/20"
+  >
     <div class="flex flex-col gap-2">
       <section class="flex flex-col gap-1">
         <h1>Hi, welcome to my site!</h1>
@@ -44,7 +46,7 @@ import Card from "../components/Card.astro";
       </section>
       <section class="flex flex-col gap-1">
         <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
-          Techlogies I work with:
+          Technologies I work with:
         </h1>
         <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
           Frontend
@@ -57,7 +59,7 @@ import Card from "../components/Card.astro";
       </section>
       <section class="flex flex-col gap-1">
         <h1 class="text-blade-400 font-semibold text-2xl lg:text-3xl">
-          Techlogies I've used:
+          Technologies I've used:
         </h1>
 
         <h2 class="text-lincoln-300 font-semibold text-xl lg:text-2xl">
