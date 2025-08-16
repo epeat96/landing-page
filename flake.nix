@@ -22,6 +22,7 @@
           echo "Welcome to your Node.js dev shell!"
           echo "Node version: $(node -v)"
           echo "NPM version:  $(npm -v)"
+          export PS1="(nix-landing-page) $PS1"
         '';
       };
     };
